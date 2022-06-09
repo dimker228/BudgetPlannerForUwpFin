@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="budgetplanner.View.PagesView.HistoryPage"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:budgetplanner.View.PagesView"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <controls:DataGrid ItemsSource="{Binding OperationInclude, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  AutoGenerateColumns="False"  >
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="Дата" Binding="{Binding Date}" />
+                <controls:DataGridTextColumn Header="Сумма" Binding="{Binding Sum}"  />
+                <controls:DataGridTextColumn Header="Тип" Binding="{Binding TypeOperationName}"  />
+                <controls:DataGridTextColumn Header="Категория" Binding="{Binding CategoryName}"  />
+                <controls:DataGridTextColumn Header="Комментарий" Binding="{Binding Comment}"  />
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+    </Grid>
+</Page>
